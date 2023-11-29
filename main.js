@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
     displayConversionHistory();
 });
 
-// Reakce na odeslání formuláře
+// Reakce na odeslání formuláře pro převod měn (EUR -> USD atd..)
 const form = document.getElementById("change_currency");
 
 form.addEventListener('submit', function (event) {
