@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konverze měn</title>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <h1 class="text-center">Aplikace na převod měn</h1>
+
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-12 col-md-4 col-lg-4 mb-4">
+                <div class="card text-center">
+                    <div class="card-body p-0">
+                        <div class="bg-light">
+                            <h5 class="text-center py-3 my-0"><i class="fa fa-credit-card" aria-hidden="true"></i>Převod
+                                měn</h5>
+
+                        </div>
+                        <hr class="my-0" />
+                        <form action="" id="change_currency">
+                            <label for="start_currency">Měna ze které chcete převádět:</label><br>
+                            <i>Zvolte si 3 znakový kód měny</i><br>
+
+                            <select name="start_currency" id="start_currency" required>
+                                <option value="EUR">EUR</option>
+                                <option value="USD">USD</option>
+                                <option value="JPY">JPY</option>
+                                <option value="BGN">BGN</option>
+                                <option value="CZK">CZK</option>
+                                <option value="DKK">DKK</option>
+                                <option value="GBP">GBP</option>
+                                <option value="HUF">HUF</option>
+                                <option value="PLN">PLN</option>
+                                <option value="RON">RON</option>
+                                <option value="SEK">SEK</option>
+                                <option value="CHF">CHF</option>
+                                <option value="ISK">ISK</option>
+                                <option value="NOK">NOK</option>
+                                <option value="HRK">HRK</option>
+                                <option value="RUB">RUB</option>
+                                <option value="TRY">TRY</option>
+                                <option value="AUD">AUD</option>
+                                <option value="BRL">BRL</option>
+                                <option value="CAD">CAD</option>
+                                <option value="CNY">CNY</option>
+                                <option value="HKD">HKD</option>
+                                <option value="IDR">IDR</option>
+                                <option value="ILS">ILS</option>
+                                <option value="INR">INR</option>
+                                <option value="KRW">KRW</option>
+                                <option value="MXN">MXN</option>
+                                <option value="MYR">MYR</option>
+                                <option value="NZD">NZD</option>
+                                <option value="PHP">PHP</option>
+                                <option value="SGD">SGD</option>
+                                <option value="THB">THB</option>
+                                <option value="ZAR">ZAR</option>
+                            </select>
+
+                            <br><br>
+                            <label for="end_currency">Měna do které chcete převádět:</label><br>
+                            <i>Zvolte si 3 znakový kód měny</i><br>
+                            <select name="end_currency" id="end_currency" required>
+                                <option value="EUR">EUR</option>
+                                <option value="USD">USD</option>
+                                <option value="JPY">JPY</option>
+                                <option value="BGN">BGN</option>
+                                <option value="CZK">CZK</option>
+                                <option value="DKK">DKK</option>
+                                <option value="GBP">GBP</option>
+                                <option value="HUF">HUF</option>
+                                <option value="PLN">PLN</option>
+                                <option value="RON">RON</option>
+                                <option value="SEK">SEK</option>
+                                <option value="CHF">CHF</option>
+                                <option value="ISK">ISK</option>
+                                <option value="NOK">NOK</option>
+                                <option value="HRK">HRK</option>
+                                <option value="RUB">RUB</option>
+                                <option value="TRY">TRY</option>
+                                <option value="AUD">AUD</option>
+                                <option value="BRL">BRL</option>
+                                <option value="CAD">CAD</option>
+                                <option value="CNY">CNY</option>
+                                <option value="HKD">HKD</option>
+                                <option value="IDR">IDR</option>
+                                <option value="ILS">ILS</option>
+                                <option value="INR">INR</option>
+                                <option value="KRW">KRW</option>
+                                <option value="MXN">MXN</option>
+                                <option value="MYR">MYR</option>
+                                <option value="NZD">NZD</option>
+                                <option value="PHP">PHP</option>
+                                <option value="SGD">SGD</option>
+                                <option value="THB">THB</option>
+                                <option value="ZAR">ZAR</option>
+                            </select>
+                            <br><br>
+                            <label for="value_currency">Hodnota</label><br>
+                            <i>Zadejte množství původní měny pro převod</i><br>
+                            <input type="number" name="value_currency" id="value_currency" required step=".01">
+                            <br><br>
+
+                            <input type="submit" value="převod">
+
+                        </form>
+
+                        <hr>
+
+
+
+                        <p class="py-3 my-0" id="prevod_aktualni"></p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="col-12 col-md-4 col-lg-4 mb-4">
+                <div class="card text-center">
+                    <div class="card-body p-0">
+                        <div class="bg-light">
+                            <h5 class="text-center py-3 my-0"><i class="fa fa-star" aria-hidden="true"></i>Převod
+                                oblíbené měny</h5>
+                            <i>Provede se převod do CZK, ideální na dovolenou </i><i class="fa fa-plane"
+                                aria-hidden="true"></i>
+
+                        </div>
+                        <hr class="my-0" />
+                        <form action="" id="favourite_currency_form">
+                            <label for="start_currency_favourite">Měna ze které chcete převádět:</label><br>
+                            <i>Zvolte si 3 znakový kód měny, která se nastaví jako vaše oblíbená</i><br>
+
+                            <select name="start_currency_favourite" id="start_currency_favourite" required>
+                                <option value="EUR">EUR</option>
+                                <option value="USD">USD</option>
+                                <option value="JPY">JPY</option>
+                                <option value="BGN">BGN</option>
+                                <option value="CZK">CZK</option>
+                                <option value="DKK">DKK</option>
+                                <option value="GBP">GBP</option>
+                                <option value="HUF">HUF</option>
+                                <option value="PLN">PLN</option>
+                                <option value="RON">RON</option>
+                                <option value="SEK">SEK</option>
+                                <option value="CHF">CHF</option>
+                                <option value="ISK">ISK</option>
+                                <option value="NOK">NOK</option>
+                                <option value="HRK">HRK</option>
+                                <option value="RUB">RUB</option>
+                                <option value="TRY">TRY</option>
+                                <option value="AUD">AUD</option>
+                                <option value="BRL">BRL</option>
+                                <option value="CAD">CAD</option>
+                                <option value="CNY">CNY</option>
+                                <option value="HKD">HKD</option>
+                                <option value="IDR">IDR</option>
+                                <option value="ILS">ILS</option>
+                                <option value="INR">INR</option>
+                                <option value="KRW">KRW</option>
+                                <option value="MXN">MXN</option>
+                                <option value="MYR">MYR</option>
+                                <option value="NZD">NZD</option>
+                                <option value="PHP">PHP</option>
+                                <option value="SGD">SGD</option>
+                                <option value="THB">THB</option>
+                                <option value="ZAR">ZAR</option>
+                            </select>
+                            <br><br>
+                            <input type="submit" value="Ulož oblíbenou měnu" id="save_favourite_currency">
+                        </form>
+
+                        <br><br>
+
+                        <div id="favourite_currency"></div>
+                        <hr>
+                        <form id="favourite_currency_form_convert">
+                            <label for="value_currency_favourite">Hodnota</label><br>
+                            <i>Zadejte množství původní měny pro převod</i><br>
+                            <input type="number" name="value_currency_favourite" id="value_currency_favourite" required
+                                step=".01">
+                            <br><br>
+
+                            <input type="submit" value="převod oblíbené měny">
+
+                        </form>
+                        <hr>
+
+                        <p class="py-3 my-0" id="prevod_aktualni_oblibena"></p>
+
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="col-12 col-md-4 col-lg-4 mb-4">
+                <div class="card text-center">
+                    <div class="card-body p-0">
+                        <div class="bg-light">
+                            <h5 class="text-center py-3 my-0"><i class="fa fa-history" aria-hidden="true"></i>Historie
+                                posledních 10 převodů</h5>
+
+                            <hr class="my-0" />
+
+                        </div>
+                        <div id="history" class="text-center "></div>
+                    </div>
+                </div>
+            </div>
+            <div>
+
+
+
+
+
+
+            </div>
+        </div>
+        <div class="jumbotron my-5">
+            <h1 class="display-4 text-center"><i class="fa fa-bookmark" aria-hidden="true"></i>
+                Vztah CZK (České koruny) k ostatním měnám</h1>
+
+            <hr class="my-4">
+            <div id="all_currencies" class="text-center "></div>
+        </div>
+    </div>
+    </div>
+
+
+    <footer class="text-center">Vytvořil <a href="https://samfuksa.eu">Samuel Fuksa</a> v roce 2023 pro předmět AP5WT
+    </footer>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="main.js"></script> <!--připojení vlastního JS-->
+</body>
+
+</html>
