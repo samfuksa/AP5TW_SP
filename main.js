@@ -43,8 +43,8 @@ function displayConversionHistory() {
     const historyDiv = document.getElementById('history');
     const conversionHistory = JSON.parse(localStorage.getItem('conversionHistory')) || [];
 
-    // Omezení na posledních 10 záznamů
-    const lastTenEntries = conversionHistory.slice(0, 10);
+    // Omezení na posledních 5 záznamů
+    const lastTenEntries = conversionHistory.slice(0, 5);
 
     // Vypisování historie konverzí od nejnovějšího po nejstarší
     historyDiv.innerHTML = '';
