@@ -134,7 +134,8 @@
                             <br><br>
                             <hr><label for="value_currency">Hodnota</label><br>
                             <i>Zadejte množství původní měny pro převod</i><br>
-                            <input type="number" name="value_currency" id="value_currency" required step=".01" class="form-value-widht">
+                            <input type="number" name="value_currency" id="value_currency" required step=".01"
+                                class="form-value-widht">
                             <br><br>
 
                             <input type="submit" value="převod">
@@ -206,10 +207,10 @@
                                 <option value="ZAR">ZAR</option>
                             </select>
                             <br><br>
-                            <input type="submit" value="Ulož oblíbenou měnu" id="save_favourite_currency">
-                        </form>
+                            <input type="submit" value="Ulož oblíbenou měnu" id="save_favourite_currency"
+                                class="form-value-widht">
+                        </form><br>
 
-                        <br><br>
 
                         <div id="favourite_currency"></div>
 
@@ -242,11 +243,15 @@
                     <div class="card-body p-0 card-h">
                         <div class=" py-3 bg-light card-des-h">
                             <h5 class="text-center py-5 my-0"><i class="fa fa-history" aria-hidden="true"></i>Proběhlé
-                                převody</h5>
+                                převody - posledních 5</h5>
 
                         </div>
                         <hr class="my-0">
                         <div id="history" class="text-center "></div>
+
+                        <br>
+                        <button id="delete" class="form-value-widht btn btn-danger">Smazat historii převodů</button>
+
                     </div>
                 </div>
             </div>

@@ -102,6 +102,10 @@ form.addEventListener('submit', function (event) {
 
 
 
+
+
+
+
 // Funkce pro uložení oblíbené měny do localStorage
 function saveFavouriteCurrencyToLocalStorage(favouriteCurrency) {
     localStorage.setItem('favouriteCurrency', favouriteCurrency);
@@ -134,6 +138,12 @@ favouriteCurrencyForm.addEventListener('submit', function (event) {
     const favouriteCurrency = document.querySelector('#start_currency_favourite').value;
     saveFavouriteCurrencyToLocalStorage(favouriteCurrency);
 });
+
+
+
+
+
+
 
 // Reakce na odeslání formuláře pro převod oblíbené měny
 const favouriteCurrencyFormConvert = document.getElementById('favourite_currency_form_convert');
@@ -172,4 +182,19 @@ favouriteCurrencyFormConvert.addEventListener('submit', function (event) {
             console.error('Chyba při získávání dat:', error);
         });
 });
+
+
+
+// Získání tlačítka pro smazání oblíbené měny
+const deleteFavouriteCurrencyButton = document.getElementById('delete');
+
+// Smazání historie převodů
+deleteFavouriteCurrencyButton.addEventListener('click', function () {
+    // Smazání oblíbené měny z localStorage
+    localStorage.removeItem('conversionHistory');
+
+    // Aktualizace zobrazení oblíbené měny na stránce
+    displayConversionHistory(); // Funkce pro zobrazení historií měn
+});
+
 
