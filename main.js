@@ -185,7 +185,7 @@ favouriteCurrencyFormConvert.addEventListener('submit', function (event) {
 
 
 
-// Získání tlačítka pro smazání oblíbené měny
+// Získání tlačítka pro smazání historie převodů
 const deleteFavouriteCurrencyButton = document.getElementById('delete');
 
 // Smazání historie převodů
