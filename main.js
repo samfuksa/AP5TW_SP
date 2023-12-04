@@ -190,9 +190,11 @@ const deleteFavouriteCurrencyButton = document.getElementById('delete');
 
 // Smazání historie převodů
 deleteFavouriteCurrencyButton.addEventListener('click', function () {
-    // Smazání oblíbené měny z localStorage
+    //potvrzení smazání historie
+    if (confirm("Opravdu chcete smazat historii?")){
+        // Smazání historie převodů
     localStorage.removeItem('conversionHistory');
-
+}
     // Aktualizace zobrazení oblíbené měny na stránce
     displayConversionHistory(); // Funkce pro zobrazení historií měn
 });
