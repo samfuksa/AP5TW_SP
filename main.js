@@ -77,7 +77,7 @@ form.addEventListener('submit', function (event) {
         return;
     }
 
-    const finalCurrency = document.querySelector("#prevod_aktualni");
+    const finalCurrency = document.querySelector("#convert_current");
 
     const url = `https://api.freecurrencyapi.com/v1/latest?apikey=${apiKey}&base_currency=${startCurrency}`;
 
@@ -160,7 +160,7 @@ favouriteCurrencyFormConvert.addEventListener('submit', function (event) {
         return;
     }
 
-    const finalCurrency = document.querySelector('#prevod_aktualni_oblibena');
+    const finalCurrency = document.querySelector('#convert_fav');
 
     const url = `https://api.freecurrencyapi.com/v1/latest?apikey=${apiKey}&base_currency=${startCurrency}`;
 
@@ -191,10 +191,10 @@ const deleteFavouriteCurrencyButton = document.getElementById('delete');
 // Smazání historie převodů
 deleteFavouriteCurrencyButton.addEventListener('click', function () {
     //potvrzení smazání historie
-    if (confirm("Opravdu chcete smazat historii?")){
+    if (confirm("Opravdu chcete smazat historii?")) {
         // Smazání historie převodů
-    localStorage.removeItem('conversionHistory');
-}
+        localStorage.removeItem('conversionHistory');
+    }
     // Aktualizace zobrazení oblíbené měny na stránce
     displayConversionHistory(); // Funkce pro zobrazení historií měn
 });
